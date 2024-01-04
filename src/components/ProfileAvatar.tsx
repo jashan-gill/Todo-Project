@@ -18,11 +18,9 @@ import {
   CategoryRounded,
   Favorite,
   GetAppRounded,
-  GitHub,
   Logout,
   PersonRounded,
   SettingsRounded,
-  StarRounded,
   TaskAltRounded,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
@@ -221,21 +219,6 @@ export const ProfileAvatar = () => {
         </StyledMenuItem>
 
         <Divider sx={{ margin: "0 8px" }} />
-        <StyledMenuItem
-          onClick={() => {
-            window.open("https://github.com/maciekt07/TodoApp");
-          }}
-        >
-          <GitHub /> &nbsp; Github{" "}
-          {stars && (
-            <MenuLabel clr="#ff9d00">
-              <span style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <StarRounded style={{ fontSize: "18px" }} />
-                &nbsp;{stars}
-              </span>
-            </MenuLabel>
-          )}
-        </StyledMenuItem>
 
         <StyledMenuItem onClick={handleLogoutConfirmationOpen} sx={{ color: "#ff4040 !important" }}>
           <Logout /> &nbsp; Logout
@@ -285,19 +268,6 @@ export const ProfileAvatar = () => {
             <h4 style={{ margin: 0, fontWeight: 600 }}> {user.name || "User"}</h4>
           </StyledMenuItem>
           <Divider sx={{ margin: "0 8px" }} />
-          <CreditsContainer>
-            <span style={{ display: "flex", alignItems: "center" }}>
-              Made with &nbsp; <Favorite sx={{ fontSize: "16px" }} />
-            </span>
-            <span style={{ marginLeft: "6px", marginRight: "4px" }}>by</span>{" "}
-            <a
-              style={{ textDecoration: "none", color: "inherit" }}
-              href="https://github.com/maciekt07"
-            >
-              maciekt07
-            </a>
-            <br />
-          </CreditsContainer>
           <CreditsContainer>
             {lastUpdate && (
               <span style={{ margin: 0 }}>
